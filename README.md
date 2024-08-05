@@ -16,3 +16,49 @@ app.get('/', (req, res) => {
 
 app.listen(3000);
 ```
+### 2. What is the purpose of useEffect in React?
+useEffect is a hook in React that lets you perform side effects in function components. It serves the same purpose as lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount in class components. Common uses include fetching data, directly manipulating the DOM, and setting up subscriptions.
+```
+useEffect(() => {
+    document.title = `You clicked ${count} times`;
+}, [count]);
+```
+### 3. How do you manage state in a React application with Redux?
+Redux is a state management library for JavaScript apps. It allows you to manage application state in a centralized store and use actions and reducers to update the state predictably. You connect your components to the Redux store using the connect function or hooks like useSelector and useDispatch.
+```
+import { createStore } from 'redux';
+import { Provider, useSelector, useDispatch } from 'react-redux';
+
+const initialState = { count: 0 };
+
+function reducer(state = initialState, action) {
+    switch (action.type) {
+        case 'INCREMENT':
+            return { count: state.count + 1 };
+        default:
+            return state;
+    }
+}
+
+const store = createStore(reducer);
+
+function Counter() {
+    const count = useSelector((state) => state.count);
+    const dispatch = useDispatch();
+    return (
+        <div>
+            <p>{count}</p>
+            <button onClick={() => dispatch({ type: 'INCREMENT' })}>Increment</button>
+        </div>
+    );
+}
+
+function App() {
+    return (
+        <Provider store={store}>
+            <Counter />
+        </Provider>
+    );
+}
+```
+
