@@ -61,4 +61,28 @@ function App() {
     );
 }
 ```
+### 4. What is a Higher-Order Component (HOC) in React?
+A Higher-Order Component (HOC) is an advanced technique in React for reusing component logic. HOCs are functions that take a component and return a new component. They can be used to add functionality to existing components.
+```
+function withLogging(WrappedComponent) {
+    return function(props) {
+        console.log('Rendering component');
+        return <WrappedComponent {...props} />;
+    };
+}
+```
+### 5. How does MongoDB handle indexing, and why is it important?
+Indexing in MongoDB improves the efficiency of query operations by reducing the amount of data MongoDB needs to scan. Indexes are special data structures that store a small portion of the data set in an easy-to-traverse form. Without indexes, MongoDB must perform a collection scan, i.e., scan every document in a collection, to select those documents that match the query statement.
+```
+db.collection.createIndex({ field: 1 }); // Creates an index on `field` in ascending order
+```
+### 6. Explain the difference between componentWillMount and componentDidMount in React.
+componentWillMount is called before the initial render when the component is about to mount. It is mostly used for setting initial state and other preparations. componentDidMount is called after the initial render when the component has been mounted to the DOM. It is often used for data fetching and setting up subscriptions. componentWillMount is deprecated and should be avoided in favor of componentDidMount or hooks.
+### 7. How would you optimize the performance of a React application?
+Performance optimization in React can be achieved through various techniques:
+- Code splitting: Using dynamic import() to split code into smaller bundles.
+- Memoization: Using React.memo and useMemo to avoid unnecessary re-renders.
+- Virtualization: Using libraries like react-window or react-virtualized for rendering large lists efficiently.
+- Avoiding anonymous functions in render: Prevents re-creation of functions on every render.
+- Optimizing dependencies: Ensuring that useEffect and useCallback dependencies are managed correctly.
 
