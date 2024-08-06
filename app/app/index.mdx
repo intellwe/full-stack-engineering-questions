@@ -3,7 +3,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 # Express.js, React, Redux, MongoDB, Node.js Concepts
 
-## 1. Explain the concept of middleware in Express.js. Can you give an example of how it's used?
+## <span id="middleware-express">1. Explain the concept of middleware in Express.js. Can you give an example of how it's used?</span>
 
 Middleware functions in Express.js are functions that have access to the request object (req), the response object (res), and the next middleware function in the application's request-response cycle. Middleware can execute code, modify the request and response objects, end the request-response cycle, and call the next middleware function. Example:
 
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 app.listen(3000);`}
 </SyntaxHighlighter>
 
-## 2. What is the purpose of useEffect in React?
+## <span id="useeffect-react">2. What is the purpose of useEffect in React?</span>
 
 useEffect is a hook in React that lets you perform side effects in function components. It serves the same purpose as lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount in class components. Common uses include fetching data, directly manipulating the DOM, and setting up subscriptions.
 
@@ -34,7 +34,7 @@ useEffect is a hook in React that lets you perform side effects in function comp
 }, [count]);`}
 </SyntaxHighlighter>
 
-## 3. How do you manage state in a React application with Redux?
+## <span id="redux-state-management">3. How do you manage state in a React application with Redux?</span>
 
 Redux is a state management library for JavaScript apps. It allows you to manage application state in a centralized store and use actions and reducers to update the state predictably. You connect your components to the Redux store using the connect function or hooks like useSelector and useDispatch.
 
@@ -75,7 +75,7 @@ function App() {
 }`}
 </SyntaxHighlighter>
 
-## 4. What is a Higher-Order Component (HOC) in React?
+## <span id="hoc-react">4. What is a Higher-Order Component (HOC) in React?</span>
 
 A Higher-Order Component (HOC) is an advanced technique in React for reusing component logic. HOCs are functions that take a component and return a new component. They can be used to add functionality to existing components.
 
@@ -88,7 +88,7 @@ A Higher-Order Component (HOC) is an advanced technique in React for reusing com
 }`}
 </SyntaxHighlighter>
 
-## 5. How does MongoDB handle indexing, and why is it important?
+## <span id="mongodb-indexing">5. How does MongoDB handle indexing, and why is it important?</span>
 
 Indexing in MongoDB improves the efficiency of query operations by reducing the amount of data MongoDB needs to scan. Indexes are special data structures that store a small portion of the data set in an easy-to-traverse form. Without indexes, MongoDB must perform a collection scan, i.e., scan every document in a collection, to select those documents that match the query statement.
 
@@ -96,11 +96,11 @@ Indexing in MongoDB improves the efficiency of query operations by reducing the 
 {`db.collection.createIndex({ field: 1 }); // Creates an index on \`field\` in ascending order`}
 </SyntaxHighlighter>
 
-## 6. Explain the difference between componentWillMount and componentDidMount in React.
+## <span id="react-lifecycle">6. Explain the difference between componentWillMount and componentDidMount in React.</span>
 
 componentWillMount is called before the initial render when the component is about to mount. It is mostly used for setting initial state and other preparations. componentDidMount is called after the initial render when the component has been mounted to the DOM. It is often used for data fetching and setting up subscriptions. componentWillMount is deprecated and should be avoided in favor of componentDidMount or hooks.
 
-## 7. How would you optimize the performance of a React application?
+## <span id="react-optimization">7. How would you optimize the performance of a React application?</span>
 
 Performance optimization in React can be achieved through various techniques:
 - Code splitting: Using dynamic import() to split code into smaller bundles.
@@ -109,7 +109,7 @@ Performance optimization in React can be achieved through various techniques:
 - Avoiding anonymous functions in render: Prevents re-creation of functions on every render.
 - Optimizing dependencies: Ensuring that useEffect and useCallback dependencies are managed correctly.
 
-## 8. How does server-side rendering (SSR) work in a React application?
+## <span id="ssr-react">8. How does server-side rendering (SSR) work in a React application?</span>
 
 SSR in React involves rendering React components on the server and sending the HTML to the client. This improves the performance and SEO of the application. Libraries like Next.js facilitate SSR in React applications.
 
@@ -125,7 +125,7 @@ function Page({ data }) {
 }`}
 </SyntaxHighlighter>
 
-## 9. What are the common methods of securing a REST API in Node.js?
+## <span id="securing-nodejs-api">9. What are the common methods of securing a REST API in Node.js?</span>
 
 Common methods for securing a REST API include:
 - Authentication: Using tokens (JWT) or OAuth for authenticating users.
@@ -134,11 +134,11 @@ Common methods for securing a REST API include:
 - HTTPS: Ensuring data is transmitted over HTTPS to prevent eavesdropping.
 - Rate limiting: Using libraries like express-rate-limit to prevent abuse.
 
-## 10. What are the differences between SQL and NoSQL databases, and when would you use MongoDB over a SQL database?
+## <span id="sql-vs-nosql">10. What are the differences between SQL and NoSQL databases, and when would you use MongoDB over a SQL database?</span>
 
 SQL databases are relational, structured, and use SQL for defining and manipulating data. They are suitable for applications requiring multi-row transactions. NoSQL databases like MongoDB are non-relational, schema-less, and store data in formats like JSON. They are suitable for applications requiring horizontal scaling, flexible schema, and handling large volumes of unstructured data.
 
-## 11. How does the context API work in React, and when should you use it?
+## <span id="react-context-api">11. How does the context API work in React, and when should you use it?</span>
 
 The Context API in React provides a way to pass data through the component tree without having to pass props down manually at every level. It is useful for global state management, themes, or authenticated user details.
 
@@ -151,11 +151,11 @@ function ThemedButton() {
 }`}
 </SyntaxHighlighter>
 
-## 12. Explain the event loop in Node.js.
+## <span id="nodejs-event-loop">12. Explain the event loop in Node.js.</span>
 
 The event loop in Node.js is a mechanism that handles asynchronous operations. Node.js processes operations in a single thread using an event-driven, non-blocking I/O model. The event loop continuously checks the call stack, and if it is empty, it processes the next event from the event queue.
 
-## 13. How do you handle state management in large React applications?
+## <span id="large-react-state-management">13. How do you handle state management in large React applications?</span>
 
 In large React applications, state management can be handled using:
 - Redux: Centralizes application state and logic.
@@ -163,7 +163,7 @@ In large React applications, state management can be handled using:
 - MobX: Uses observables to reactively track state changes.
 - Recoil: A state management library for React by Facebook.
 
-## 14. How would you implement authentication in a MERN stack application?
+## <span id="mern-authentication">14. How would you implement authentication in a MERN stack application?</span>
 
 Authentication in a MERN stack application involves:
 - Backend (Node.js + Express): Use JWT for token-based authentication. Validate user credentials, generate a token, and send it to the client.
@@ -175,14 +175,14 @@ const jwt = require('jsonwebtoken');
 const token = jwt.sign({ userId: user.id }, 'secret', { expiresIn: '1h' });`}
 </SyntaxHighlighter>
 
-## 15. How do you prevent SQL injection in a Node.js application using MongoDB?
+## <span id="prevent-sql-injection">15. How do you prevent SQL injection in a Node.js application using MongoDB?</span>
 
 MongoDB is not vulnerable to SQL injection as it doesn't use SQL queries. However, to prevent other forms of injection and ensure security:
 - Validate inputs: Use libraries like Joi.
 - Use parameterized queries: Although MongoDB queries are not SQL-based, always treat user input cautiously.
 - Sanitize inputs: Remove any potentially harmful characters or strings.
 
-## 16. What are React hooks, and how do you create a custom hook?
+## <span id="react-custom-hooks">16. What are React hooks, and how do you create a custom hook?</span>
 
 React hooks are functions that let you use state and other React features in functional components. A custom hook is a function that starts with use and can call other hooks to encapsulate reusable logic.
 
@@ -198,7 +198,7 @@ React hooks are functions that let you use state and other React features in fun
 }`}
 </SyntaxHighlighter>
 
-## 17. How do you handle file uploads in a Node.js application?
+## <span id="nodejs-file-uploads">17. How do you handle file uploads in a Node.js application?</span>
 
 File uploads in a Node.js application can be handled using the multer middleware.
 
@@ -211,11 +211,11 @@ app.post('/upload', upload.single('file'), (req, res) => {
 });`}
 </SyntaxHighlighter>
 
-## 18. Explain the virtual DOM and how React uses it to optimize rendering.
+## <span id="react-virtual-dom">18. Explain the virtual DOM and how React uses it to optimize rendering.</span>
 
 The virtual DOM is a lightweight representation of the actual DOM. React uses it to optimize rendering by comparing the virtual DOM with the actual DOM and updating only the parts that have changed (reconciliation). This minimizes direct manipulation of the actual DOM, leading to better performance.
 
-## 19. How does the MERN stack handle real-time data?
+## <span id="mern-realtime-data">19. How does the MERN stack handle real-time data?</span>
 
 Real-time data in a MERN stack application can be handled using WebSockets or libraries like Socket.io. The server (Node.js + Express) sets up a WebSocket connection to communicate with the client (React) in real-time.
 
@@ -228,7 +228,7 @@ io.on('connection', (socket) => {
 });`}
 </SyntaxHighlighter>
 
-## 20. How would you implement server-side rendering (SSR) in a MERN stack application?
+## <span id="mern-ssr">20. How would you implement server-side rendering (SSR) in a MERN stack application?</span>
 
 Server-side rendering (SSR) in a MERN stack application can be implemented using libraries like Next.js for the React frontend. Next.js handles SSR out of the box and can be integrated with a Node.js/Express backend.
 
