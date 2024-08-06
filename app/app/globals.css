@@ -1,0 +1,43 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* .prose {
+  @apply max-w-none prose prose-lg prose-indigo;
+}
+
+.prose code {
+  @apply bg-gray-200 text-red-600 rounded p-1;
+}
+
+.prose pre {
+  @apply bg-gray-900 text-white p-4 rounded;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold mb-4;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold mt-8 mb-4;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold mt-6 mb-2;
+}
+
+.prose p {
+  @apply mb-4 leading-6;
+}
+
+.prose ul {
+  @apply list-disc list-inside mb-4;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose a {
+  @apply text-indigo-600 underline;
+} */
