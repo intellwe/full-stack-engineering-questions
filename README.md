@@ -139,3 +139,59 @@ MongoDB is not vulnerable to SQL injection as it doesn't use SQL queries. Howeve
 - Validate inputs: Use libraries like Joi.
 - Use parameterized queries: Although MongoDB queries are not SQL-based, always treat user input cautiously.
 - Sanitize inputs: Remove any potentially harmful characters or strings.
+### 16. What are React hooks, and how do you create a custom hook?
+React hooks are functions that let you use state and other React features in functional components. A custom hook is a function that starts with use and can call other hooks to encapsulate reusable logic.
+```
+function useFetch(url) {
+    const [data, setData] = useState(null);
+    useEffect(() => {
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => setData(data));
+    }, [url]);
+    return data;
+}
+```
+### 17. How do you handle file uploads in a Node.js application?
+File uploads in a Node.js application can be handled using the multer middleware.
+```
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
+
+app.post('/upload', upload.single('file'), (req, res) => {
+    res.send('File uploaded successfully');
+});
+```
+### 18. Explain the virtual DOM and how React uses it to optimize rendering.
+The virtual DOM is a lightweight representation of the actual DOM. React uses it to optimize rendering by comparing the virtual DOM with the actual DOM and updating only the parts that have changed (reconciliation). This minimizes direct manipulation of the actual DOM, leading to better performance.
+### 19. How does the MERN stack handle real-time data?
+Real-time data in a MERN stack application can be handled using WebSockets or libraries like Socket.io. The server (Node.js + Express) sets up a WebSocket connection to communicate with the client (React) in real-time.
+```
+const io = require('socket.io')(server);
+io.on('connection', (socket) => {
+    socket.on('message', (data) => {
+        io.emit('message', data);
+    });
+});
+```
+### 20. How would you implement server-side rendering (SSR) in a MERN stack application?
+Server-side rendering (SSR) in a MERN stack application can be implemented using libraries like Next.js for the React frontend. Next.js handles SSR out of the box and can be integrated with a Node.js/Express backend.
+```
+const express = require('express');
+const next = require('next');
+const app = next({ dev: process.env.NODE_ENV !== 'production' });
+const handle = app.getRequestHandler();
+
+app.prepare().then(() => {
+    const server = express();
+
+    server.get('*', (req, res) => {
+        return handle(req, res);
+    });
+
+    server.listen(3000, (err) => {
+        if (err) throw err;
+        console.log('> Ready on http://localhost:3000');
+    });
+});
+```
