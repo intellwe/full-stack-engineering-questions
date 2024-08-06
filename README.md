@@ -85,4 +85,57 @@ Performance optimization in React can be achieved through various techniques:
 - Virtualization: Using libraries like react-window or react-virtualized for rendering large lists efficiently.
 - Avoiding anonymous functions in render: Prevents re-creation of functions on every render.
 - Optimizing dependencies: Ensuring that useEffect and useCallback dependencies are managed correctly.
+### 8. How does server-side rendering (SSR) work in a React application?
+SSR in React involves rendering React components on the server and sending the HTML to the client. This improves the performance and SEO of the application. Libraries like Next.js facilitate SSR in React applications.
+```
+// Example with Next.js
+export async function getServerSideProps() {
+    const data = await fetchData();
+    return { props: { data } };
+}
 
+function Page({ data }) {
+    return <div>{data}</div>;
+}
+```
+### 9. What are the common methods of securing a REST API in Node.js?
+Common methods for securing a REST API include:
+- Authentication: Using tokens (JWT) or OAuth for authenticating users.
+- Authorization: Ensuring users have permission to access certain resources.
+- Input validation: Using libraries like Joi to validate input data.
+- HTTPS: Ensuring data is transmitted over HTTPS to prevent eavesdropping.
+- Rate limiting: Using libraries like express-rate-limit to prevent abuse.
+### 10. What are the differences between SQL and NoSQL databases, and when would you use MongoDB over a SQL database?
+SQL databases are relational, structured, and use SQL for defining and manipulating data. They are suitable for applications requiring multi-row transactions. NoSQL databases like MongoDB are non-relational, schema-less, and store data in formats like JSON. They are suitable for applications requiring horizontal scaling, flexible schema, and handling large volumes of unstructured data.
+### 11. How does the context API work in React, and when should you use it?
+The Context API in React provides a way to pass data through the component tree without having to pass props down manually at every level. It is useful for global state management, themes, or authenticated user details.
+```
+const ThemeContext = React.createContext('light');
+
+function ThemedButton() {
+    const theme = useContext(ThemeContext);
+    return <button className={theme}>Button</button>;
+}
+```
+### 12. Explain the event loop in Node.js.
+The event loop in Node.js is a mechanism that handles asynchronous operations. Node.js processes operations in a single thread using an event-driven, non-blocking I/O model. The event loop continuously checks the call stack, and if it is empty, it processes the next event from the event queue.
+### 13. How do you handle state management in large React applications?
+In large React applications, state management can be handled using:
+- Redux: Centralizes application state and logic.
+- Context API: Provides a lighter alternative to Redux for smaller apps.
+- MobX: Uses observables to reactively track state changes.
+- Recoil: A state management library for React by Facebook.
+### 14. How would you implement authentication in a MERN stack application?
+Authentication in a MERN stack application involves:
+- Backend (Node.js + Express): Use JWT for token-based authentication. Validate user credentials, generate a token, and send it to the client.
+- Frontend (React): Store the token in localStorage or a cookie. Use context or Redux to manage authentication state.
+```
+// Example of generating a JWT
+const jwt = require('jsonwebtoken');
+const token = jwt.sign({ userId: user.id }, 'secret', { expiresIn: '1h' });
+```
+### 15. How do you prevent SQL injection in a Node.js application using MongoDB?
+MongoDB is not vulnerable to SQL injection as it doesn't use SQL queries. However, to prevent other forms of injection and ensure security:
+- Validate inputs: Use libraries like Joi.
+- Use parameterized queries: Although MongoDB queries are not SQL-based, always treat user input cautiously.
+- Sanitize inputs: Remove any potentially harmful characters or strings.
